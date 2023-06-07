@@ -140,6 +140,14 @@ WHERE length <= 90;    90 minutes is 1.5 hrs */
 -- HAVING COUNT(*) >= 200
 -- ORDER BY rating;
 
+-- ================================== Example: Neated Query ==========================
+-- SELECT film_id, title, replacement_cost 
+-- FROM film
+-- WHERE replacement_cost = (SELECT MAX(replacement_cost)
+--  FROM film);
 
-
-
+-- SELECT title, length
+-- FROM film
+-- WHERE film_id IN (SELECT film_id 
+-- FROM film_text 
+-- WHERE description LIKE "%documentary%");
