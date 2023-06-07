@@ -3,42 +3,7 @@ use northwind;
 -- --------------------EXERCISE 1 --------------------- --
 /* Question 1:
 SELECT CategoryName
-FROM Categories;
-
-Beverages
-Condiments
-Confections
-Dairy Products
-Grains/Cereals
-Meat/Poultry
-Produce
-Seafood*/
-
-/* Question 3  :
-SELECT DISTINCT Country
-FROM Customers; 	
-
-Germany
-Mexico
-UK
-Sweden
-France
-Spain
-Canada
-Argentina
-Switzerland
-Brazil
-AustriaItaly
-Portugal
-USA
-Venezuela
-Ireland
-Belgium
-Norway
-Denmark
-Finland
-Poland
-*/
+FROM Categories; */
 
 
 /* Question 4
@@ -161,5 +126,50 @@ WHERE SupplierID = (
     WHERE CompanyName = 'Tokyo Traders'
 ); */
 
+-- =================================== EXERCISE 3 =========================== --
+-- QUESTION 1 :
+/* SELECT COUNT(*) AS SupplierCount
+ FROM Suppliers;                  = 29 */
+
+-- QUESTION 2 :
+ /* SELECT SUM(salary)  AS Total_Salary
+ FROM employees					= 20362.929931640625 */
+
+-- QUESTION 3 :
+/* SELECT  MIN(UnitPrice) AS Cheapest_Price
+FROM Products;				    = 2.5000 */
+
+-- QUESTION 4 :
+/* SELECT AVG(UnitPrice)
+From products;					= 28.86636364 */
+
+-- QUESTION 5 :
+/* SELECT MAX(unitPrice)
+FROM products;					= 263.5000 */
+
+-- QUESTION 6 :
+ -- SELECT SupplierID, COUNT(*) AS NumberOfItems
+--  FROM Products
+--  GROUP BY SupplierID;
+
+-- QUESTION 7 :
+/* SELECT CategoryID, AVG(UnitPrice) AS AveragePrice
+FROM Products
+GROUP BY CategoryID; */ 
+
+-- QUESTION 8 :
+/* SELECT SupplierID, COUNT(*) AS NumberOfISupplierIDtems
+FROM Products
+GROUP BY SupplierID
+HAVING COUNT(*) >= 5; */
+
+
+-- QUESTION 9 :
+/* SELECT productID, productname, (unitprice*unitsinstock )AS inventory_value
+From products
+ORDER BY inventory_value DESC, productname; */
+
+  
+  
   
   
