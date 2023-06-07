@@ -173,7 +173,60 @@ HAVING COUNT(*) >= 5; */
 From products
 ORDER BY inventory_value DESC, productname; */
 
-  
-  
+-- ======================================= Exercises 4 =================================== --
+-- QUESTION 1 :
+/* SELECT ProductName
+FROM Products
+WHERE UnitPrice = (
+    SELECT MAX(UnitPrice)
+    FROM Products				--	= Cte de Blaye
+ );*/
+
+
+-- QUESTION 2 :
+/* SELECT OrderID, ShipName, ShipAddress
+FROM Orders
+WHERE ShipVia = (
+    SELECT ShipperID
+    FROM Shippers
+    WHERE ShipName = 'Federal Shipping'
+); */
+
+-- SELECT shipname
+--     FROM orders
+--      WHERE ShipName LIKE 'F%';
+
+
+-- QUESTION 3 :
+/* SELECT OrderID
+FROM `Order Details`
+WHERE ProductID = (
+    SELECT ProductID
+    FROM Products
+    WHERE ProductName = 'Sasquatch Ale'
+ ); */
+
+-- QUESTION 4 :
+/* SELECT Employees.FirstName, Employees.LastName ,orderid
+FROM Employees, Orders
+WHERE Employees.EmployeeID = Orders.EmployeeID
+AND Orders.OrderID = 10266;          = Janet	Leverling	10266
+*/
+
+-- QUESTION 5 :  
+/* SELECT Customers.ContactName, orderid
+FROM Customers, Orders
+WHERE Customers.CustomerID = Orders.CustomerID
+AND Orders.OrderID = 10266;			= Pirkko Koskitalo */ 
+
+  /* SELECT customers.CustomerID, orderid
+  FROM customers, orders
+  WHERE customers.CustomerID = orders.CustomerID
+  AND orders.ORderID = 10266;		= WARTH	10266 */ 
+
+
+
+
+	
   
   
