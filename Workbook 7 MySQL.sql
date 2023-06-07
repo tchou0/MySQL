@@ -84,3 +84,62 @@ FROM film;
 /* SELECT film_id, title, length
 FROM film
 WHERE length <= 90;    90 minutes is 1.5 hrs */
+
+-- ====================== Example: COUNT() =============================== --
+-- QUERY: How many films are in the films table?
+-- SELECT COUNT(*)
+-- FROM film;
+
+-- QUERY: How many distinct ratings are represented in the films table?
+-- SELECT COUNT(DISTINCT(rating))
+-- FROM film;
+
+-- SELECT COUNT(distinct(name)) AS num_categories
+-- FROM category;
+
+-- ======================= Examlpe SUM() =============================== --
+-- QUERY: If I wanted to watch all of the movies in the film catalog, how long would it take?
+-- SELECT SUM(length)
+-- FROM film;
+
+-- ======================= Examlpe AVG() =============================== --
+-- QUERY: What is the average cost to rent a "G"-rated film?
+-- SELECT AVG(rental_rate)
+-- FROM film
+-- WHERE rating = "G";
+
+-- ======================== Example  MIN() and MAX() ======================= --
+-- QUERY: How short is the shortest film? What about the longest?
+-- SELECT MIN(length)
+-- FROM film;
+
+-- SELECT MAX(length)
+-- FROM film;
+
+-- ========================= Example: Group By ============================== --
+-- QUERY: How many movies are available broken down by rating (G, PG, PG-13, etc)?
+-- SELECT rating, COUNT(*)
+-- FROM film
+-- GROUP BY rating;
+
+ -- QUERY: What is the average price to rent a movie broken down by rating (G, PG, PG-13)?
+-- SELECT rating, avg(rental_rate)
+-- FROM film
+-- GROUP BY rating
+
+-- ================================== Example: AS keword ========================================== --
+-- SELECT rating, AVG(rental_rate) AS avg_rate
+-- FROM film
+-- GROUP BY rating
+-- ORDER BY avg_rating;
+
+-- ================================== Example: Having ====================================== --
+-- SELECT rating, COUNT(*) 
+-- FROM film
+-- GROUP BY rating
+-- HAVING COUNT(*) >= 200
+-- ORDER BY rating;
+
+
+
+
