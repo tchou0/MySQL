@@ -5,6 +5,10 @@ use northwind;
 SELECT CategoryName
 FROM Categories; */
 
+/* Question 3  :
+SELECT DISTINCT Country
+FROM Customers; */
+
 
 /* Question 4
 SELECT MIN(OrderDate) AS first_order_date
