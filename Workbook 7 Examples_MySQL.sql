@@ -151,3 +151,71 @@ WHERE length <= 90;    90 minutes is 1.5 hrs */
 -- WHERE film_id IN (SELECT film_id 
 -- FROM film_text 
 -- WHERE description LIKE "%documentary%");
+
+-- ========================================= Example: Join =================================== --
+-- use northwind;
+-- select * from employees 
+-- JOIN customers
+-- ON customers.Country = employees.Country;
+
+-- SELECT employee.id, first_name, last_name, description, min_val, max_val
+-- FROM employee 
+-- JOIN pay_grade
+--  ON employee.pay_grade_id = pay_grade.id;
+
+
+-- ====================================== Example: INSERT INTO ======================================= --
+-- INSERT INTO country(country_id, country, last_update)
+-- VALUES(110, "Zimbabwe", NOW());
+
+-- INSERT INTO country
+-- VALUES(120, "Tou", NOW());
+
+-- SELECT * FROM country
+-- where country_id = '120'
+
+-- ====================================== Update ================================================= --
+-- UPDATE customer
+-- SET first_name = 'PATTY', last_name = 'JOHNSTON'
+-- WHERE customer_id = 2;
+
+-- select customer_id, first_name, last_name
+-- From customer;            -- old customer_name PATRICIA	JOHNSON
+
+-- SET SQL_SAFE_UPDATES=0;
+-- UPDATE customer
+-- SET first_name = 'PATRICE'
+-- WHERE first_name = 'PATTY';
+-- SET SQL_SAFE_UPDATES=1;
+
+
+-- ===================================== DELET STATEMENT ===================================== --
+-- SELECT payment_id, customer_id, staff_id, amount
+-- FROM payment 
+-- WHERE payment_id = 100;
+
+-- DELETE FROM payment
+-- WHERE payment_id = 100;
+
+
+-- ====================================== EXAMPLE: CREAT TABLE ======================================= --
+-- CREATE TABLE advertisements (
+--  AdId int NOT NULL,
+--  Title varchar(50) NOT NULL,
+--  MagicCode varchar(9),
+--  PercentOff float NOT NULL,
+--  PRIMARY KEY(AdId)
+-- );
+
+-- CREATE TABLE advertisementsadvertisements (
+--  AdId int NOT NULL AUTO_INCREMENT,
+--  Title varchar(50) NOT NULL,
+--  MagicCode varchar(9),
+--  PercentOff float NOT NULL,
+--  PRIMARY KEY(AdId)
+-- );
+
+-- SELECT * FROM advertisements;
+
+
+
