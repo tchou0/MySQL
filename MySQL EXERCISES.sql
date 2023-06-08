@@ -225,8 +225,69 @@ AND Orders.OrderID = 10266;			= Pirkko Koskitalo */
   AND orders.ORderID = 10266;		= WARTH	10266 */ 
 
 
+-- ================================================== EXERCISE 5 ================================= --
+-- Question 1:
+/* SELECT P.ProductID, P.ProductName, P.UnitPrice, C.CategoryName
+FROM Products p 
+JOIN Categories C ON P.CategoryID = C.CategoryID
+ORDER BY C.CategoryName, P.ProductName; */
+
+-- Question 2:
+/* SELECT Products.ProductID, Products.ProductName, Products.UnitPrice, Suppliers.SupplierID
+FROM Products
+JOIN Suppliers ON Products.SupplierID = Suppliers.SupplierID
+WHERE Products.UnitPrice > 75
+ORDER BY Products.ProductName; */
+
+-- SELECT unitprice
+-- FROM products
+-- WHERE UnitPrice > 75
+
+-- Question 3:
+/* SELECT p.ProductID, p.ProductName, p.UnitPrice, c.CategoryName, s.SupplierID
+FROM products AS p
+JOIN categories AS c ON p.CategoryID = c.CategoryID
+JOIN suppliers As s ON p.SupplierID = s.SupplierID
+ORDER BY p.ProductName */
 
 
-	
-  
-  
+-- Question 4:
+/* SELECT p.ProductName, c.CategoryName, UnitPrice
+FROM products AS p
+JOIN categories AS c ON p.CategoryID = c.CategoryID
+WHERE p.UnitPrice =(
+	SELECT MAX(unitprice)
+    FROM products); */
+
+-- SELECT unitprice 
+-- FROM products
+-- ORDER BY UnitPrice desc;
+
+-- Question 5:
+-- SELECT Orders.OrderID, Orders.ShipName, Orders.ShipAddress, Shippers.ShipperName
+-- FROM Orders
+-- JOIN Shippers ON Shippers.ShipperID = Orders.ShipVia
+-- WHERE Orders.ShipCountry = 'Germany';
+
+--  SELECT shipcountry, Shipvia, ShipName
+--  FROM orders
+--  WHERE ShipCountry = 'Germany'
+
+--  SELECT * FROM shippers;
+
+
+-- Question 6:
+-- SELECT o.orderid, o.orderdate, o.shipname, o.shipaddress, p.ProductName
+-- FROM orders AS o
+-- JOIN `order details` ON o.OrderID = `order details`.orderid
+-- JOIN products AS p ON `order details`.productid = p.ProductID
+-- WHERE p.Productname = 'Sasquatch Ale';
+
+-- SELECT *
+-- FROM products
+-- Where ProductName = 'Sasquatch Ale';
+
+-- SELECT * 
+-- FROM `order details`;
+
+
